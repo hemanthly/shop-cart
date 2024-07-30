@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "name": "Smartphone X",
+      "price": 599.99,
+      "description": "Latest model with advanced features",
+      "image": "https://example.com/smartphone-x.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Laptop Pro",
+      "price": 1299.99,
+      "description": "Powerful laptop for professionals",
+      "image": "https://example.com/laptop-pro.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Wireless Earbuds",
+      "price": 129.99,
+      "description": "High-quality sound with long battery life",
+      "image": "https://example.com/wireless-earbuds.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Smart Watch",
+      "price": 249.99,
+      "description": "Stay connected with style",
+      "image": "https://example.com/smart-watch.jpg"
+    },
+    {
+      "id": 5,
+      "name": "4K TV",
+      "price": 799.99,
+      "description": "Immersive viewing experience",
+      "image": "https://example.com/4k-tv.jpg"
+    }
+  ]
