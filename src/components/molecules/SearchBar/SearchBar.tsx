@@ -2,13 +2,18 @@
 import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { SearchBarProps } from './searchBar.types';
+import { useDispatch } from 'react-redux';
+// import { setSearchTerm } from '@/redux/store/slices/productSlice';
 
 const SearchBar: React.FC<SearchBarProps> = ({ placeholder, onSearch }) => {
   const [searchValue, setSearchValue] = useState('');
+//   const dispatch = useDispatch();
 
   const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     onSearch(searchValue);
+    // setSearchTerm(event.target.value);
+    // dispatch(filterProducts(event.target.value));
   };
 
   return (
@@ -26,3 +31,5 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder, onSearch }) => {
 };
 
 export default SearchBar;
+
+
