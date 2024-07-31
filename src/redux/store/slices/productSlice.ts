@@ -1,38 +1,28 @@
-// import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-// import productData from '@/data/productData.json';
+import { Product, products } from '@/data/productData';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// interface Product {
-//   id: number;
-//   name: string;
-//   price: number;
-//   description: string;
-//   image: string;
-// }
+interface ProductState {
+  products: Product[];
+  filteredProducts: Product[];
+}
 
-// interface ProductState {
-//   products: Product[];
-//   filteredProducts: Product[];
-//   searchTerm: string;
-// }
+const initialState: ProductState = {
+  products: products,
+  filteredProducts: products,
+};
 
-// const initialState: ProductState = {
-//   products: productData,
-//   filteredProducts: productData,
-//   searchTerm: '',
-// };
+const productSlice = createSlice({
+  name: 'products',
+  initialState,
+  reducers: {
+    filterProducts: (state, action: PayloadAction<string>) => {
+      const searchTerm = action.payload.toLowerCase();
+      state.filteredProducts = state.products.filter(product =>
+        product.name.toLowerCase().includes(searchTerm)
+      );
+    },
+  },
+});
 
-// const productSlice = createSlice({
-//   name: 'products',
-//   initialState,
-//   reducers: {
-//     setSearchTerm: (state, action: PayloadAction<string>) => {
-//       state.searchTerm = action.payload;
-//       state.filteredProducts = state.products.filter((product) =>
-//         product.name.toLowerCase().includes(action.payload.toLowerCase())
-//       );
-//     }
-//   },
-// });
-
-// export const { setSearchTerm } = productSlice.actions;
-// export default productSlice.reducer;
+export const { filterProducts } = productSlice.actions;
+export default productSlice.reducer;
